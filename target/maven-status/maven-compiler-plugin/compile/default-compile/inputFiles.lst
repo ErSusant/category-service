@@ -1,0 +1,13 @@
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\domain\Category.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\exception\ErrorResponse.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\security\JwtAuthenticationFilter.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\dto\CategoryDto.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\CategoryServiceApplication.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\service\CategoryService.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\security\JwtTokenProvider.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\exception\GlobalExceptionHandler.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\controller\CategoryController.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\security\SecurityConfig.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\repository\CategoryRepository.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\exception\ResourceNotFoundException.java
+C:\MY-APPS\E-book Management\backend\category-service\src\main\java\com\ebook\management\categoryservice\mapper\CategoryMapper.java
