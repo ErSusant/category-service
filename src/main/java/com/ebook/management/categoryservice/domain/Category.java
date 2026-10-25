@@ -1,7 +1,8 @@
 package com.ebook.management.categoryservice.domain;
 
 import jakarta.persistence.*;
-import java.time.Instant;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "categories")
@@ -27,10 +28,10 @@ public class Category {
   private boolean deleted = false;
 
   @Column(name = "created_at", nullable = false, updatable = false)
-  private Instant createdAt = Instant.now();
+  private LocalDateTime createdAt ;
 
   @Column(name = "updated_at", nullable = false)
-  private Instant updatedAt = Instant.now();
+  private LocalDateTime updatedAt ;
 
   public Long getId() {
     return id;
@@ -80,19 +81,19 @@ public class Category {
     this.deleted = deleted;
   }
 
-  public Instant getCreatedAt() {
+  public LocalDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Instant createdAt) {
+  public void setCreatedAt(LocalDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
-  public Instant getUpdatedAt() {
+  public LocalDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Instant updatedAt) {
+  public void setUpdatedAt(LocalDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 }

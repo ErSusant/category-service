@@ -6,6 +6,8 @@ import com.ebook.management.categoryservice.exception.ResourceNotFoundException;
 import com.ebook.management.categoryservice.mapper.CategoryMapper;
 import com.ebook.management.categoryservice.repository.CategoryRepository;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
@@ -39,8 +41,8 @@ public class CategoryService {
   public CategoryDto createCategory(CategoryDto dto) {
     Category category = CategoryMapper.toEntity(dto);
     category.setDeleted(false);
-    category.setCreatedAt(Instant.now());
-    category.setUpdatedAt(Instant.now());
+    category.setCreatedAt(LocalDateTime.now());
+    category.setUpdatedAt(LocalDateTime.now());
     return CategoryMapper.toDto(repository.save(category));
   }
 
@@ -53,7 +55,7 @@ public class CategoryService {
     category.setDescription(dto.getDescription());
     category.setParentId(dto.getParentId());
     category.setActive(dto.isActive());
-    category.setUpdatedAt(Instant.now());
+    category.setUpdatedAt(LocalDateTime.now());
     return CategoryMapper.toDto(repository.save(category));
   }
 
@@ -62,7 +64,13 @@ public class CategoryService {
     Category category = repository.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
     category.setDeleted(true);
-    category.setUpdatedAt(Instant.now());
+    category.setUpdatedAt(LocalDateTime.now());
     repository.save(category);
+  }
+  @Transactional(readOnly = true)
+  public List<CategoryDto> getActiveCategories(String name) {
+    return repository.findActiveCategoriesByName(name).stream()
+        .map(CategoryMapper::toDto)
+        .collect(Collectors.toList());
   }
 }
